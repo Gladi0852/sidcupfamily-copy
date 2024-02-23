@@ -1,0 +1,542 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+}
+html{
+    font-size: 0.5vw;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 8px;
+    background-color: #95c11e;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 20px;
+}
+nav{
+    padding: 1% 8%;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    /* font-size: 1.2vw; */
+    gap: 40px;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+nav img{
+    width: 6%;
+}
+nav h4{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.crsr{
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: #95c11e;
+    z-index: 99;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    transition: width 0.5s, height 0.5s;
+}
+.crsr-blr{
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background-color: #96c11e43;
+    z-index: 99;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    filter: blur(50px);
+    z-index: 1;
+}
+nav h4:hover ~ .crsr{
+    color: red;
+}
+body video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed; 
+}
+main{
+    position: relative;
+    background-color: rgba(0,0,0,0.5);
+}
+main .page1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+
+}
+.page1 h1{
+    font-size: 15rem;  
+    /* font-size: 8vw; */
+    position: relative;
+    z-index: 5;  
+}
+.page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    -webkit-text-stroke: 2px #95c11e;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+}
+.page1 h2{
+    font-size: 3.2rem;
+    /* font-size: 1.8vw; */
+}
+.page1 p{
+    font-size: 2.3rem;
+    /* font-size: 1.2vw; */
+    width: 40%;
+    text-align: center;
+    margin-top: 1em;
+    font-weight: 500;
+}
+::selection{
+    color: #95c11e;
+    background-color: #fff;
+}
+.page1 .arrow-down{
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    border: 1px solid #95c11e;
+    font-size: 6rem;
+    /* font-size: 3vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+    transition: 0.5s;
+    opacity: 0;
+}
+.page1 .arrow-down:hover{
+    transform: scale(0.4,0.4);
+    background-color: #95c11e;
+}
+
+main .page2{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 15em;
+}
+
+.page2 .scroller{
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+}
+.page2 .scroller .scroller-in{
+    display: flex;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.page2 .scroller h4{
+    font-size: 12rem;
+    font-family: gilroy;
+    font-weight: 900;
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: 0.5s;
+    margin-right: 0.3em;
+}
+
+.page2 .scroller h4:hover{
+    color: #95c11e;
+    -webkit-text-stroke: 2px #95c11e
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    padding: 5% 8%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#about-us .photo img{
+    width: 22rem;
+    height: 22rem;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+#about-us .about h1{
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+#about-us .about p{
+    font-size: 2rem;
+    width: 83%;
+    text-align: center;
+    margin: auto;
+}
+
+#cards{
+    padding: 2% 12%;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#cards .card{
+    width: 30%;
+    border-radius: 2rem;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+#cards .card1{
+    background-image: url(./Assests/card1.jpg);
+}
+#cards .card2{
+    background-image: url(./Assests/card2.jpg);
+}
+#cards .card3{
+    background-image: url(./Assests/card3.jpg);
+}
+
+#cards .card h3{
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1em;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+}
+#cards .card .overlay{
+    background-color: #95c11e;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding-top: 13rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+.overlay i{
+    font-size: 3rem;
+}
+.overlay .arw-right{
+    position: absolute;
+    right: -3em;
+    top: -3em;
+    border: 1.5px solid #000;
+    padding: 5rem;
+    border-radius: 50%;
+}
+.overlay h2{
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 1em;
+}
+.overlay p{
+    font-size: 2rem;
+    line-height: 1.8em;
+}
+
+#cards .card .overlay:hover{
+    opacity: 1;
+}
+
+#cards img{
+    position: absolute;
+    top: -3vw;
+    left: 22rem;
+}
+
+#grd-box{
+    height: 30vh;
+    width: 100%;
+    background: linear-gradient(to left bottom,#139f3c, #9fce20);
+    margin: 6em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+#grd-box img{
+    width: 15%;
+}
+#grd-box h2{
+    font-size: 3.5rem;
+    width: 40%;
+    text-align: center;
+    font-weight: 800;
+}
+#page3{
+    min-height: 100vh;
+    width: 100%;
+}
+#food-sec{
+    height: 60vh;
+    padding: 1% 8%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#food-sec .photo-cont, .desc{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+#food-sec .photo-cont .photo{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#food-sec .photo-cont .photo img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+#food-sec .photo-cont .btn{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+}
+.cir{   
+    font-size: 2.2rem; 
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.in-cir{
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 2.2rem;
+}
+.cir-bg{
+    border: 2px solid #95c11e;
+    transition: all linear 0.2s;
+}
+.in-cir-bg{
+    background-color: #95c11e;
+    transition: all linear 0.2s;
+}
+#food-sec .desc h1{
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 0.8em;
+}
+
+#food-sec .desc p{
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.8em;
+    margin-bottom: 1.5em;
+}
+#food-sec .desc button{
+    width: 20%;
+    padding: 1em 0;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.3rem;
+    border: 2px solid #95c11e;
+    cursor: pointer;
+}
+#food-sec .dot-img{
+    position: absolute;
+    height: 80%;
+    bottom: 0;
+}
+#quote{
+    padding: 7% 12%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    color: #fff;
+}
+#quote .qus{
+    display: flex;
+    justify-content: flex-start;
+    /* border: 5px solid blue; */
+}
+#quote .que{
+    display: flex;
+    justify-content: flex-end;
+}
+#quote img{
+    width: 6%;
+}
+#quote .qu{
+    width: 80%;
+    text-align: center;
+    align-self: center;
+    font-size: 3.7rem;
+    padding: 10% 0;
+}
+
+
+#page4{
+    /* min-height: 50vh; */
+    width: 100%;
+    position: relative;
+}
+
+#page4 .boxes{
+    padding: 3% 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#page4 .box{
+    width: 30%;
+    height: 20vh;
+    border-radius: 25px;
+    position: relative;
+    background-color: #95c11e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#page4 .box .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-position: center;
+    background-size: cover;
+    z-index: 5;
+    opacity: 0;
+    background-size: 110%;
+    transition: 0.5s;
+}
+#page4 .box1 .overlay{
+    background-image: url("./Assests/box1.avif"); 
+}
+#page4 .box2 .overlay{
+    background-image: url("./Assests/box2.avif");  
+}
+#page4 .box3 .overlay{
+    background-image: url("./Assests/box3.avif");  
+}
+#page4 .box h4{
+    font-size: 4rem;
+    z-index: 6;
+    font-weight: 800;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+#page4 .box .overlay:hover{
+    opacity: 1;
+    background-size: 100%;
+    color: #fff;
+}
+#page4 .box .overlay:hover ~ h4{
+    color: #fff;
+}
+#page4 h1{
+    font-family: 'gilroy';
+    -webkit-text-stroke: 1px #fff;
+    font-size: 12.8rem;
+    color: transparent;
+    padding: 0 5px;
+    position: absolute;
+    top: 4%;
+}
+
+footer{
+    background: linear-gradient(to left bottom,#119f3a, #ace022);
+    padding: 7% 8%;
+    display: flex;
+    gap: 8%;
+    position: relative;
+}
+footer .logo{
+    width: 10%;
+    display: flex;
+}
+footer .logo img{
+    width: 80%;
+    z-index: 5;
+}
+footer h2{
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 5rem;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+footer h2:hover{
+    color: #fff;
+}
+
+footer .link2 h2{
+    font-weight: 800;
+}
+footer p{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+footer .address{
+    padding-top: 1vh;
+}
+footer .dot-img{
+    position: absolute;
+    /* width: 20%; */
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 4;
+}
